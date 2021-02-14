@@ -5,14 +5,14 @@
       function clearance
       
       
-      var htmlOrigin; 
+      var Origin;
        $.get('https://rfservices.statuspage.io/#', function(data) {
-            htmlOrigin=data;
+            Origin=data;
         }).always(function() {
    console.log("Hello world!");
    const search = 'StatusPage';
    const replaceWith = 'The Rickard Family';
-   var displayHtmlValue = htmlOrigin.replace(search, replaceWith);          
+   var displayHtmlValue = Origin.replace(search, replaceWith);          
   });
       
       
