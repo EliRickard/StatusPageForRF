@@ -1,15 +1,7 @@
 <div id="core">
 </div>
+<script src="jquery-3.5.1.min.js"></script>
 <script>
-var url = 'https://rfservices.statuspage.io/';
-var xmlhttp;
-if (window.XMLHttpRequest)
-{
-  xmlhttp = new XMLHttpRequest();
-}
-xmlhttp.open("GET",URL,true);
-xmlhttp.send();
-  
-document.getElementById("core").innerHTML = xmlhttp.responseText;
-
+  var url = 'example.com/editor/stores/10';
+  $('#core').load(url);
 </script>
