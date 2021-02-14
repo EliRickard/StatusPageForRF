@@ -1,3 +1,5 @@
+<div id="core">
+</div>
 <script>
 var url = 'https://rfservices.statuspage.io/';
 var xmlhttp;
@@ -8,6 +10,6 @@ if (window.XMLHttpRequest)
 xmlhttp.open("GET",URL,true);
 xmlhttp.send();
   
-document.write(xmlhttp.responseText);
+document.getElementById("core").innerHTML = xmlhttp.responseText;
 
 </script>
