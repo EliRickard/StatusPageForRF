@@ -2,14 +2,17 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-      var html; 
+      function clearance
+      
+      
+      var htmlOrigin; 
        $.get('https://rfservices.statuspage.io/#', function(data) {
-            html=data;
+            htmlOrigin=data;
         }).always(function() {
    console.log("Hello world!");
    const search = 'StatusPage';
    const replaceWith = 'The Rickard Family';
-   var displayHtmlValue = html.replace(search, replaceWith);          
+   var displayHtmlValue = htmlOrigin.replace(search, replaceWith);          
   });
       
       
