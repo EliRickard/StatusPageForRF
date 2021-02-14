@@ -1,0 +1,23 @@
+<div id="core">
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+      
+      
+      var Origin;
+       $.get('https://rfservices.statuspage.io/uptime', function(data) {
+            Origin=data;
+        }).always(function() {
+   console.log("Origin Load End");
+   const search = 'Statuspage';
+   const replaceWith = 'The Rickard Family';
+   var displayHtmlValueNR = Origin.replace(search, replaceWith);   
+   
+   var displayHtmlValueUR1 = displayHtmlValueNR.replace('<a href="#" data-js-hook="show-updates-dropdown" id="show-updates-dropdown" class="show-updates-dropdown" aria-label="Subscribe to updates" aria-expanded="false"', ' '); 
+   
+   var displayHtmlValueUR2 = displayHtmlValueUR1.replace('<a class="color-secondary" target="_blank" rel="noopener noreferrer nofollow" href="https://www.atlassian.com/software/statuspage/powered-by?utm_campaign=rfservices.statuspage.io&amp;utm_content=status-pages&amp;utm_medium=powered-by&amp;utm_source=inapp"', '<a class="color-secondary" target="_blank" rel="noopener noreferrer nofollow" href="https://rickard.co"'); 
+   
+   document.getElementById("core").innerHTML = displayHtmlValueUR2;
+  });
+</script>
