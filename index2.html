@@ -5,7 +5,7 @@
       var html; 
        $.get('https://rfservices.statuspage.io/#', function(data) {
             html=data;
-        }).done(function(){
+        }).then(function(){
 const search = 'StatusPage';
 const replaceWith = 'The Rickard Family';
 const result = html.replace(search, replaceWith);
