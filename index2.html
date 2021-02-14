@@ -5,10 +5,14 @@
       var html; 
        $.get('https://rfservices.statuspage.io/#', function(data) {
             html=data;
-        })
-const search = 'StatusPage';
+        }).done(function(){
+            const search = 'StatusPage';
 const replaceWith = 'The Rickard Family';
-
 const result = html.split(search).join(replaceWith);
+        }; 
+//const search = 'StatusPage';
+//const replaceWith = 'The Rickard Family';
+
+//const result = html.split(search).join(replaceWith);
 
 </script>
