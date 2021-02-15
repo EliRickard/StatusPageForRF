@@ -1,14 +1,15 @@
-<style>.preloader{position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100vh;z-index:99999999;background-image:url(preload.gif);background-repeat:no-repeat;background-color:#232424;background-position:center;text-align:center}</style>
-<div id="core">
+<style>.preloader{position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100vh;z-index:99999999;background-image:url(preload.gif);background-repeat:no-repeat;background-color:#232424;background-position:center;text-align:center}html{background-color:232424}
+</style><html>
+<div id="core" class="core" >
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
+</html><script>
 function preloaderFadeOutInit(){
 $('.preloader').fadeOut('slow');
 $('body').attr('id','');
 }
 // Window load function
-jQuery(window).on('load', function () {
+jQuery(window).on('data', function () {
 (function ($) {
 preloaderFadeOutInit();
 })(jQuery);
