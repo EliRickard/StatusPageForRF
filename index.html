@@ -1,3 +1,4 @@
+<style>.preloader{position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100vh;z-index:99999999;background-image:url(preload.gif);background-repeat:no-repeat;background-color:#232424;background-position:center;text-align:center}</style>
 <div id="core">
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -6,6 +7,7 @@
       
       
       var Origin;
+     var Origin;
        $.get('https://rfservices.statuspage.io/#', function(data) {
             Origin=data;
         }).always(function() {
