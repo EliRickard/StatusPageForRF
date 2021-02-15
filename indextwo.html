@@ -1,0 +1,42 @@
+<style>.preloader{position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100vh;z-index:99999999;background-image:url(preload.gif);background-repeat:no-repeat;background-color:#232424;background-position:center;text-align:center}html{background-color:232424}
+</style><html>
+<div id="core" class="core" >
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</html><script>
+var loading="t"
+function preloaderFadeOutInit(){
+$('.preloader').fadeOut('slow');
+$('body').attr('id','');
+}
+// Window load function
+//jQuery(window).on('load', function () {
+//(function ($) {
+//preloaderFadeOutInit();
+//})(jQuery);
+//});
+
+
+</script>
+<div class="preloader"><a style="font-family: Arial, sans-serif; font-size: 10px; color: #6f7373; text-decoration: none; font-weight: normal; font-style: normal; text-align: center;">&nbsp;<br>This should take no longer than 5 seconds.</a></div>
+<script>
+     
+     var Origin;
+       $.get('https://rfservices.statuspage.io/#', function(data) {
+            Origin=data;
+        }).always(function() {
+   console.log("Origin Load End");
+   const search = 'Statuspage';
+   const replaceWith = 'The Rickard Family';
+   preloaderFadeOutInit();
+   var displayHtmlValueNR = Origin.replace(search, replaceWith);   
+   
+   var displayHtmlValueUR1 = displayHtmlValueNR.replace('<a href="#" data-js-hook="show-updates-dropdown" id="show-updates-dropdown" class="show-updates-dropdown" aria-label="Subscribe to updates" aria-expanded="false"', ' '); 
+   
+   var displayHtmlValueUR2 = displayHtmlValueUR1.replace('<a class="color-secondary" target="_blank" rel="noopener noreferrer nofollow" href="https://www.atlassian.com/software/statuspage/powered-by?utm_campaign=rfservices.statuspage.io&amp;utm_content=status-pages&amp;utm_medium=powered-by&amp;utm_source=inapp"', '<a class="color-secondary" target="_blank" rel="noopener noreferrer nofollow" href="https://rickard.co"'); 
+   
+   var displayHtmlValueUR3 = displayHtmlValueUR2.replace('<a href="/uptime">View historical uptime.</a>', '<a class="color-secondary">Updates in real time.</a>'); 
+
+   document.getElementById("core").innerHTML = displayHtmlValueUR3;
+  });
+</script>
